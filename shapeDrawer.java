@@ -18,6 +18,7 @@ public class shapeDrawer extends JComponent {
             g2.setColor(Color.BLACK);
             g2.fillRect(Game.SCREEN_WIDTH/2,Game.SCREEN_HEIGHT / 2,15,15);
 
+            //makes both players able to move
             if (Game.pressedKeys.contains(KeyEvent.VK_W) && Game.player1Y > 0) {
                 Game.player1Y -= 15;
             }
