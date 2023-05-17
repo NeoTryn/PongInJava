@@ -2,6 +2,7 @@ import java.awt.event.KeyEvent;
 import java.util.Random;
 
 public class Collision extends Game{
+    boolean ballSpawnLeft = false;
     Random ballYIncRan2 = new Random();
     public void checkCollision(){
         //checks if ball touches upper border
@@ -15,6 +16,7 @@ public class Collision extends Game{
         //checks if ball touches right border
         if (ballXPos > SCREEN_WIDTH){
             scoreP1++;
+            ballSpawnLeft = true;
             resetBall();
         }
         //checks if ball touches left border
@@ -33,11 +35,17 @@ public class Collision extends Game{
                         ballXInc += 1;
                     }
                     ballXInc *= -1;
-                    ballYInc += ballYIncRan2.nextInt(1, 5);
+                    ballYInc = ballYIncRan2.nextInt(1, 10);
                 }
                 if (ballXPos == player2X + j && ballYPos == player2Y + i){
+                    if (ballXInc < 0){
+                        ballXInc -= 1;
+                    }
+                    else{
+                        ballXInc += 1;
+                    }
                     ballXInc *= -1;
-                    ballYInc += ballYIncRan2.nextInt(1, 5);
+                    ballYInc = ballYIncRan2.nextInt(1, 10);
                 }
             }
         }
@@ -45,7 +53,11 @@ public class Collision extends Game{
     public void resetBall(){
         ballXPos = SCREEN_WIDTH_CENTER - 12;
         ballYPos = SCREEN_HEIGHT_CENTER - 40;
-        ballXInc = 5;
         ballYInc = ballYIncRan2.nextInt(1, 5);
+        ballXInc = 5;
+        if (ballSpawnLeft){
+            ballXInc *= -1;
+            ballSpawnLeft = false;
+        }
     }
 }

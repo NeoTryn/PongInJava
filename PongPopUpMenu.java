@@ -40,7 +40,7 @@ public class PongPopUpMenu extends JPopupMenu {
         this.add(Quit);
 
         // Add MouseListener to the popup menu itself
-       this.addMouseListener(new MouseAdapter() {
+        this.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 // Consume the event to prevent the popup menu from closing

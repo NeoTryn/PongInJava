@@ -26,7 +26,7 @@ public class Game {
     public static int ballYPos = SCREEN_HEIGHT / 2 - 40;
     public static int ballXInc = 5;
     static Random ballYIncRan1 = new Random();
-    public static int ballYInc = ballYIncRan1.nextInt(1, 5);
+    public static int ballYInc = ballYIncRan1.nextInt(1, 3);
 
 
     public static int scoreP1 = 0;
@@ -36,9 +36,4 @@ public class Game {
 
     public static final Set<Integer> pressedKeys = new HashSet<>();
     public static Window window = new Window();
-
-
-    public Game() {
-
-    }
 }

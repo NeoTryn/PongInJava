@@ -7,6 +7,7 @@ public class Window extends JFrame {
         this.add(new ShapeDrawer());
         this.pack();
         this.setSize(Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT + 50);
+        this.setTitle("Pong 2 Player");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
