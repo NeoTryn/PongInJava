@@ -9,7 +9,7 @@ public class shapeDrawer extends JComponent {
             repaint();
             Graphics2D g2 = (Graphics2D) g;
             //draws dotted line
-            for (int i = 0; i < Game.SCREEN_HEIGHT; i += 60) {
+            for (int i = 0; i < Game.SCREEN_HEIGHT; i += 64) {
                 g.setColor(Color.YELLOW);
                 g.fillRect(Game.SCREEN_WIDTH / 2 - 12, i, 12, 40);
             }
