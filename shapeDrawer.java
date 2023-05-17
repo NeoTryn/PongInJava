@@ -39,6 +39,16 @@ public class shapeDrawer extends JComponent {
             //draws player 2
             g.setColor(Color.BLACK);
             g2.fillRect(Game.player2X, Game.player2Y, 25, 120);
+            
+            //draws Score player1
+            g.setColor(Color.YELLOW);
+            g.setFont(new Font("Arial", Font.BOLD, 55));
+            g.drawString("" + Game.scoreP1 , Game.SCREEN_WIDTH / 4, 60);
+
+            //draws Score player2
+            g.setColor(Color.YELLOW);
+            g.setFont(new Font("Arial", Font.BOLD, 55));
+            g.drawString("" + Game.scoreP2 , Game.SCREEN_WIDTH / 2 + Game.SCREEN_WIDTH / 4, 60);
 
             try {
                 Thread.sleep(25);
