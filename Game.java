@@ -4,7 +4,7 @@ import java.util.*;
 
 /*
 - Collision (Felix)
-- Movement (Kornel) // in Progress
+- Movement (Kornel) // DONE
 - Score
 - UI
 - Screens (Game over, Start, Menu)
