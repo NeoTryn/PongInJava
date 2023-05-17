@@ -5,7 +5,7 @@ import java.util.*;
 /*
 - Collision (Felix)
 - Movement (Kornel) // DONE
-- Score
+- Score // DONE
 - UI
 - Screens (Game over, Start, Menu)
 - Themes
@@ -22,6 +22,9 @@ public class Game {
     public static int player1Y = 260;
     public static int player2X = 1215;
     public static int player2Y = 260;
+    
+    public static int scoreP1 = 0;
+    public static int scoreP2 = 0;
 
     public static boolean isRunning = true;
 
