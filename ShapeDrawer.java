@@ -8,6 +8,7 @@ public class ShapeDrawer extends JComponent {
     Movement mv1 = new Movement();
     //for drawing instructions
     private int instTime = 0;
+    private int instBlink = 0;
     // Create buttons
     JButton closeButton = new JButton("Close");
     JButton exitButton = new JButton("Exit");
@@ -23,26 +24,26 @@ public class ShapeDrawer extends JComponent {
         if (Game.isRunning){
             repaint();
             Graphics2D g2 = (Graphics2D) g;
+
             //draws dotted line
             for (int i = 0; i < Game.SCREEN_HEIGHT; i += 64) {
                 g.setColor(Color.YELLOW);
                 g.fillRect(Game.SCREEN_WIDTH / 2 - 12, i, 12, 40);
             }
-            if (instTime < 700){
+
+            if (instTime < 400 && instBlink % 30 != 0 && instBlink % 30 != 1 && instBlink % 30 != 2 && instBlink % 30 != 3 && instBlink % 30 != 4 && instBlink % 30 != 5){
                 //draw instructions for player 1
                 g.setColor(Color.YELLOW);
                 g.setFont(new Font("Arial", 1, 20));
                 FontMetrics insp1Metrics = getFontMetrics(g.getFont());
                 g.drawString("Use 'W' and 'S' to move up and down", Game.SCREEN_WIDTH_CENTER / 2 - insp1Metrics.stringWidth("Use 'W' and 'S' to move up and down") / 2, Game.SCREEN_HEIGHT - 20);
-
                 //draw instructions for player 2
                 g.setColor(Color.YELLOW);
                 g.setFont(new Font("Arial", 1, 20));
                 FontMetrics insp2Metrics = getFontMetrics(g.getFont());
                 g.drawString("Use 'ArrowUP' and 'arrowDOWN' to move up and down", Game.SCREEN_WIDTH - Game.SCREEN_WIDTH_CENTER / 2 - insp1Metrics.stringWidth("Use 'ArrowUP' and 'arrowDOWN' to move up and down") / 2, Game.SCREEN_HEIGHT - 20);
-                //increase for drawing String
-                instTime++;
             }
+
             if (menu.buttonsClicked[0]) {
                 menu.setVisible(false);
             }
@@ -80,7 +81,9 @@ public class ShapeDrawer extends JComponent {
             //checks collision
             collision.checkCollision();
 
-
+            //increase for drawing String
+            instTime++;
+            instBlink++;
             //makes the game update every 16ms (~60 fps)
             try {
                 Thread.sleep(16);

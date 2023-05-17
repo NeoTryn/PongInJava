@@ -28,9 +28,9 @@ public class Game {
     static Random ballYIncRan1 = new Random();
     public static int ballYInc = ballYIncRan1.nextInt(1, 3);
 
-
     public static int scoreP1 = 0;
     public static int scoreP2 = 0;
+    public static int scoreAnimation = 0;
 
     public static boolean isRunning = true;
 
