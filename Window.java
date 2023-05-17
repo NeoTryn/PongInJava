@@ -15,5 +15,9 @@ public class Window extends JFrame {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setAlwaysOnTop(true);
         this.getContentPane().setBackground(new Color(59, 0, 156));
+        this.addKeyListener(new Movement.MyKeyAdapter());
+
+        ImageIcon icon = new ImageIcon("assets//PongIcon.png");
+        this.setIconImage(icon.getImage());
     }
 }
