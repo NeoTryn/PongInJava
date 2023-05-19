@@ -1,22 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
 public class ShapeDrawer extends JComponent {
     Collision collision = new Collision();
-    static PongPopUpMenu menu = new PongPopUpMenu();
     Movement mv1 = new Movement();
+
+    public static MenuFrame mf = new MenuFrame();
     //for drawing instructions
     private int instTime = 0;
     private int instBlink = 0;
-    // Create buttons
-    JButton closeButton = new JButton("Close");
-    JButton exitButton = new JButton("Exit");
-
-    public ShapeDrawer() {
-        menu.show(Game.window, Game.SCREEN_WIDTH - Game.SCREEN_WIDTH / 4 - 55, Game.SCREEN_HEIGHT - Game.SCREEN_HEIGHT/ 4 - 55);
-        menu.setVisible(false);
-    }
 
     public void paint(Graphics g)
     {
@@ -42,13 +34,6 @@ public class ShapeDrawer extends JComponent {
                 g.setFont(new Font("Arial", 1, 20));
                 FontMetrics insp2Metrics = getFontMetrics(g.getFont());
                 g.drawString("Use 'ArrowUP' and 'arrowDOWN' to move up and down", Game.SCREEN_WIDTH - Game.SCREEN_WIDTH_CENTER / 2 - insp1Metrics.stringWidth("Use 'ArrowUP' and 'arrowDOWN' to move up and down") / 2, Game.SCREEN_HEIGHT - 20);
-            }
-
-            if (menu.buttonsClicked[0]) {
-                menu.setVisible(false);
-            }
-            else if(menu.buttonsClicked[1]) {
-                menu.setVisible(false);
             }
 
             //draws circle
@@ -80,6 +65,9 @@ public class ShapeDrawer extends JComponent {
 
             //checks collision
             collision.checkCollision();
+
+            //handles inputs for the menu
+            mf.handleInputs();
 
             //increase for drawing String
             instTime++;
