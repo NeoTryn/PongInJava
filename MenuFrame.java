@@ -67,5 +67,5 @@ public class MenuFrame extends JFrame {
             isClicked[1] = false;
         }
     }
-    //testestestestest
+    //Test 3
 }
