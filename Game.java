@@ -6,7 +6,7 @@ import java.util.*;
 - Score // Done
 - UI // In progress
 - Screens (Game over, Start, Menu) //Menu in Progress
-- Themes
+- Themes // in progress
 - (Pick-Ups)
 - Physics // in progress
  */
@@ -30,10 +30,14 @@ public class Game {
 
     public static int scoreP1 = 0;
     public static int scoreP2 = 0;
-    public static int scoreAnimation = 0;
+
+    public static int finalScore = 10;
+    public static boolean player1Won = false;
+    public static boolean player2Won = false;
 
     public static boolean isRunning = true;
 
     public static final Set<Integer> pressedKeys = new HashSet<>();
     public static Window window = new Window();
+
 }

@@ -3,47 +3,50 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class MenuFrame extends JFrame {
+public class SettingsFrame extends JFrame {
 
-    JButton Continue = new JButton("Continue");
+    ModeSettingsFrame modesFrame = new ModeSettingsFrame();
 
-    JButton Settings = new JButton("Settings");
+    ThemeSettingsFrame themesFrame = new ThemeSettingsFrame();
 
-    JButton Quit = new JButton("Quit");
+    JButton modes = new JButton("Modes");
 
-    public SettingsFrame sF = new SettingsFrame();
+    JButton themes = new JButton("Theme");
 
+    JButton back = new JButton("Back");
 
-    boolean[] isClicked = {false,false};
+    boolean[] isClicked = {false,false,false};
 
-    public MenuFrame() {
-
+    public SettingsFrame() {
         this.setLayout(new GridLayout());
 
-        Continue.addMouseListener(new MouseAdapter() {
+        modes.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                modesFrame.setVisible(true);
                 isClicked[0] = true;
             }
         });
 
-        Settings.addMouseListener(new MouseAdapter() {
+        themes.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                themesFrame.setVisible(true);
                 isClicked[1] = true;
             }
         });
 
-        Quit.addMouseListener(new MouseAdapter() {
+        back.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.exit(0);
+                ShapeDrawer.mf.setVisible(true);
+                isClicked[2] = true;
             }
         });
 
-        this.add(Continue);
-        this.add(Settings);
-        this.add(Quit);
+        this.add(modes);
+        this.add(themes);
+        this.add(back);
 
         this.addMouseListener(new MouseAdapter() {
             @Override
@@ -64,12 +67,13 @@ public class MenuFrame extends JFrame {
             this.setVisible(false);
             isClicked[0] = false;
         }
-
-        if(isClicked[1]) {
+        else if(isClicked[1]) {
             this.setVisible(false);
-            sF.setVisible(true);
             isClicked[1] = false;
         }
-
+        else if(isClicked[2]) {
+            this.setVisible(false);
+            isClicked[2] = false;
+        }
     }
 }

@@ -39,9 +39,6 @@ public class Movement implements ActionListener {
         if (Game.pressedKeys.contains(KeyEvent.VK_DOWN) && Game.player2Y + 125 < Game.SCREEN_HEIGHT) {
             Game.player2Y += 9;
         }
-        if(Game.pressedKeys.contains(KeyEvent.VK_ESCAPE)) {
-            ShapeDrawer.menu.setVisible(true);
-        }
     }
 
 

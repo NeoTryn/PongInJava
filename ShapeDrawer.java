@@ -6,6 +6,9 @@ public class ShapeDrawer extends JComponent {
     Movement mv1 = new Movement();
 
     public static MenuFrame mf = new MenuFrame();
+
+    public static GameOver gameOver = new GameOver();
+
     //for drawing instructions
     private int instTime = 0;
     private int instBlink = 0;
@@ -69,9 +72,22 @@ public class ShapeDrawer extends JComponent {
             //handles inputs for the menu
             mf.handleInputs();
 
+            mf.sF.handleInputs();
+
             //increase for drawing String
             instTime++;
             instBlink++;
+
+            //checks if GameOver should be activated
+            if (Game.scoreP1 == Game.finalScore){
+                Game.player1Won = true;
+                gameOver.setVisible(true);
+            }
+            if (Game.scoreP2 == Game.finalScore){
+                Game.player2Won = true;
+                gameOver.setVisible(true);
+            }
+            gameOver.handleInputsGameOver();
             //makes the game update every 16ms (~60 fps)
             try {
                 Thread.sleep(16);
