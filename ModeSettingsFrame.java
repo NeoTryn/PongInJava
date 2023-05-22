@@ -1,18 +1,27 @@
 import javax.swing.*;
 import javax.swing.text.*;
+import java.awt.*;
 
 public class ModeSettingsFrame extends JFrame {
 
-    JTextField input = new JTextField(10);
+    JTextField inputPlayer1 = new JTextField(10);
 
+    JTextField inputPlayer2 = new JTextField(10);
+
+    JPanel textfieldPanel = new JPanel();
+    
     public static int player1WinningScore = 0;
 
     public static int player2WinningScore = 0;
 
 
     public ModeSettingsFrame() {
-        input.setDocument(new IntegerDocumentPlayer1());
-        this.getContentPane().add(input);
+        textfieldPanel.setLayout(new FlowLayout());
+        inputPlayer1.setDocument(new IntegerDocumentPlayer1());
+        inputPlayer2.setDocument(new IntegerDocumentPlayer2());
+        textfieldPanel.add(inputPlayer1);
+        textfieldPanel.add(inputPlayer2);
+        this.getContentPane().add(textfieldPanel);
         this.pack();
         this.setVisible(false);
         this.setSize(300,100);
