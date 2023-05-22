@@ -53,14 +53,19 @@ public class GameOver extends JFrame{
             System.exit(0);
         }
         if (isClickedGameOver[1]){
-            this.setVisible(false);
-            Game.ballXInc = 5;
-            Game.ballYInc = 0;
-            Game.ballYPos = Game.SCREEN_HEIGHT_CENTER;
-            Game.ballXPos = Game.SCREEN_WIDTH_CENTER;
-            Game.scoreP1 = 0;
-            Game.scoreP2 = 0;
+            restartGame();
         }
     }
 
+    public void restartGame(){
+        dispose();
+        Game.ballYPos = Game.SCREEN_HEIGHT_CENTER;
+        Game.ballXPos = Game.SCREEN_WIDTH_CENTER;
+        Game.ballXInc = 5;
+        Game.ballYInc = 0;
+        Game.scoreP1 = 0;
+        Game.scoreP2 = 0;
+        Game.isRestarted = true;
+        isClickedGameOver[1] = false;
+    }
 }
