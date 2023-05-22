@@ -221,9 +221,18 @@ public class ShapeDrawer extends JComponent {
 
             mf.sF.handleInputs();
 
+            mf.sF.modesFrame.getInts();
+
             //increase for drawing String
             instTime++;
             instBlink++;
+
+            if (MenuFrame.sF.modesFrame.player1WinningScore != 0) {
+                Game.finalScorePlayer1 = MenuFrame.sF.modesFrame.player1WinningScore;
+            }
+            if(MenuFrame.sF.modesFrame.player2WinningScore != 0) {
+                Game.finalScorePlayer2 = MenuFrame.sF.modesFrame.player2WinningScore;
+            }
 
             //checks if GameOver should be activated
             if (Game.scoreP1 == Game.finalScorePlayer1){

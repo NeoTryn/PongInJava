@@ -1,18 +1,31 @@
 import javax.swing.*;
 import javax.swing.text.*;
+import java.awt.*;
+import java.util.Objects;
 
 public class ModeSettingsFrame extends JFrame {
 
-    JTextField input = new JTextField(10);
+    JTextField inputPlayer1 = new JTextField(10);
 
-    public static int player1WinningScore = 0;
+    JTextField inputPlayer2 = new JTextField(10);
 
-    public static int player2WinningScore = 0;
+    JLabel textPlayer1 = new JLabel("Player 1 Winning score:");
+
+    JLabel textPlayer2 = new JLabel("Player 2 Winning score:");
+
+    public int player1WinningScore = 0;
+
+    public int player2WinningScore = 0;
 
 
     public ModeSettingsFrame() {
-        input.setDocument(new IntegerDocumentPlayer1());
-        this.getContentPane().add(input);
+        this.setLayout(new GridLayout(2,2));
+        inputPlayer1.setDocument(new IntegerDocumentPlayer1());
+        inputPlayer2.setDocument(new IntegerDocumentPlayer2());
+        this.add(textPlayer1);
+        this.add(textPlayer2);
+        this.add(inputPlayer1);
+        this.add(inputPlayer2);
         this.pack();
         this.setVisible(false);
         this.setSize(300,100);
@@ -34,7 +47,6 @@ public class ModeSettingsFrame extends JFrame {
                 // Ignorieren, wenn keine Zahl eingegeben wurde
 
             }
-            player1WinningScore = Integer.parseInt(str);
         }
     }
 
@@ -50,7 +62,23 @@ public class ModeSettingsFrame extends JFrame {
             } catch (NumberFormatException e) {
                 // Ignorieren, wenn keine Zahl eingegeben wurde
             }
-            player2WinningScore = Integer.parseInt(str);
+        }
+    }
+
+    public void getInts() {
+        if (!Objects.equals(inputPlayer1.getText(), "")) {
+            try {
+                player1WinningScore = Integer.parseInt(inputPlayer1.getText());
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+        if (!Objects.equals(inputPlayer2.getText(), "")) {
+            try {
+                player2WinningScore = Integer.parseInt(inputPlayer2.getText());
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

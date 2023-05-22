@@ -5,7 +5,7 @@ import java.awt.event.MouseEvent;
 
 public class SettingsFrame extends JFrame {
 
-    ModeSettingsFrame modesFrame = new ModeSettingsFrame();
+    public ModeSettingsFrame modesFrame = new ModeSettingsFrame();
 
     ThemeSettingsFrame themesFrame = new ThemeSettingsFrame();
 
