@@ -10,6 +10,7 @@ public class Collision extends Game{
             ballYInc *= -1;
         }
         //checks if ball touches lower border
+        //prenk
         if (ballYPos > SCREEN_HEIGHT){
             ballYInc *= -1;
         }
