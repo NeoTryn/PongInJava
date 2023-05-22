@@ -31,11 +31,17 @@ public class Game {
     public static int scoreP1 = 0;
     public static int scoreP2 = 0;
 
-    public static int finalScore = 10;
+    public static int finalScorePlayer1 = 10;
+    public static int finalScorePlayer2 = 10;
     public static boolean player1Won = false;
     public static boolean player2Won = false;
 
     public static boolean isRunning = true;
+    public static boolean isRestarted = false;
+
+    public static boolean openedRestart = false;
+
+    public static final int DELAY = 6;
 
     public static final Set<Integer> pressedKeys = new HashSet<>();
     public static Window window = new Window();
