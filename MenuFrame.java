@@ -11,7 +11,7 @@ public class MenuFrame extends JFrame {
 
     JButton Quit = new JButton("Quit");
 
-    public SettingsFrame sF = new SettingsFrame();
+    public static SettingsFrame sF = new SettingsFrame();
 
 
     boolean[] isClicked = {false,false};
