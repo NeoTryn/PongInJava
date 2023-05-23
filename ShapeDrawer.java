@@ -235,12 +235,12 @@ public class ShapeDrawer extends JComponent {
             }
 
             //checks if GameOver should be activated
-            if (Game.scoreP1 == Game.finalScorePlayer1){
+            if (Game.scoreP1 >= Game.finalScorePlayer1){
                 Game.player1Won = true;
                 gameOver.setVisible(true);
                 Game.openedRestart = true;
             }
-            if (Game.scoreP2 == Game.finalScorePlayer2){
+            if (Game.scoreP2 >= Game.finalScorePlayer2){
                 Game.player2Won = true;
                 gameOver.setVisible(true);
                 Game.openedRestart = true;

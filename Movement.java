@@ -30,13 +30,13 @@ public class Movement implements ActionListener {
         if (Game.pressedKeys.contains(KeyEvent.VK_W) && Game.player1Y > 0) {
             Game.player1Y -= 9;
         }
-        if (Game.pressedKeys.contains(KeyEvent.VK_S) && Game.player1Y + 125 < Game.SCREEN_HEIGHT) {
+        if (Game.pressedKeys.contains(KeyEvent.VK_S) && Game.player1Y + 110 < Game.SCREEN_HEIGHT) {
             Game.player1Y += 9;
         }
         if (Game.pressedKeys.contains(KeyEvent.VK_UP) && Game.player2Y > 0) {
             Game.player2Y -= 9;
         }
-        if (Game.pressedKeys.contains(KeyEvent.VK_DOWN) && Game.player2Y + 125 < Game.SCREEN_HEIGHT) {
+        if (Game.pressedKeys.contains(KeyEvent.VK_DOWN) && Game.player2Y + 110 < Game.SCREEN_HEIGHT) {
             Game.player2Y += 9;
         }
     }
