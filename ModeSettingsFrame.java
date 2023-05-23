@@ -1,13 +1,23 @@
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
+ master
 import java.util.Objects;
+
+ main
 
 public class ModeSettingsFrame extends JFrame {
 
     JTextField inputPlayer1 = new JTextField(10);
 
     JTextField inputPlayer2 = new JTextField(10);
+ master
+
+
+    JPanel textfieldPanel = new JPanel();
+    
+    public static int player1WinningScore = 0;
+ main
 
     JLabel textPlayer1 = new JLabel("Player 1 Winning score:");
 
@@ -19,6 +29,7 @@ public class ModeSettingsFrame extends JFrame {
 
 
     public ModeSettingsFrame() {
+ master
         this.setLayout(new GridLayout(2,2));
         inputPlayer1.setDocument(new IntegerDocumentPlayer1());
         inputPlayer2.setDocument(new IntegerDocumentPlayer2());
@@ -26,6 +37,14 @@ public class ModeSettingsFrame extends JFrame {
         this.add(textPlayer2);
         this.add(inputPlayer1);
         this.add(inputPlayer2);
+
+        textfieldPanel.setLayout(new FlowLayout());
+        inputPlayer1.setDocument(new IntegerDocumentPlayer1());
+        inputPlayer2.setDocument(new IntegerDocumentPlayer2());
+        textfieldPanel.add(inputPlayer1);
+        textfieldPanel.add(inputPlayer2);
+        this.getContentPane().add(textfieldPanel);
+ main
         this.pack();
         this.setVisible(false);
         this.setSize(300,100);
